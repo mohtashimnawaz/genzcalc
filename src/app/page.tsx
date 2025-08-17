@@ -41,7 +41,7 @@ export default function Home() {
     <div className="font-sans min-h-screen flex flex-col items-center justify-center relative p-8 sm:p-20">
       <div className="background-3d" />
       <main className="flex flex-col gap-10 items-center w-full max-w-md z-10">
-        <h1 className="text-4xl font-bold text-white drop-shadow-lg mb-2 text-center">Gently Calculator</h1>
+  <h1 className="text-4xl font-bold text-white drop-shadow-lg mb-2 text-center">gen Z calci</h1>
         <p className="text-lg text-white/80 mb-6 text-center">Calculate using Gen Z terms like <span className="font-bold">2K + 3K</span>, <span className="font-bold">1.5M - 500K</span>, etc.</p>
         <form className="w-full flex flex-col gap-4 items-center" onSubmit={handleCalculate}>
           <input
