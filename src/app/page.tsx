@@ -94,7 +94,7 @@ export default function Home() {
         {dark ? "🖤" : "🟩"}
       </div>
       <main className="flex flex-col gap-10 items-center w-full max-w-md z-10 glass-card shadow-2xl">
-        <h1 className="text-4xl font-bold text-white drop-shadow-lg mb-2 text-center">gen Z calci</h1>
+  <h1 className="text-4xl font-bold mb-2 text-center website-title">gen Z calci</h1>
         <p className="text-lg text-white/80 mb-6 text-center">Calculate using Gen Z terms like <span className="font-bold">2K + 3K</span>, <span className="font-bold">1.5M - 500K</span>, etc.</p>
         <form className="w-full flex flex-col gap-4 items-center" onSubmit={handleCalculate}>
           <input
