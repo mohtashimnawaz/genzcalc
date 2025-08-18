@@ -20,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Enter") {
-        handleCalculate(e as any);
+        handleCalculate(e as unknown as React.FormEvent);
       } else if (e.key === "Escape") {
         setInput("");
         setResult(null);
@@ -71,8 +71,8 @@ export default function Home() {
     setError(null);
     try {
       const numericExpr = convertExpression(input);
-      // eslint-disable-next-line no-eval
       const value = Function(`"use strict";return (${numericExpr})`)();
+  // eslint-disable-next-line no-eval
       if (isNaN(value)) throw new Error();
       setResult(value.toLocaleString());
       setHistory([{expr: input, res: value.toLocaleString()}, ...history].slice(0, 5));
