@@ -142,6 +142,11 @@ export default function Home() {
           </div>
         )}
       </main>
+      {/* Footer */}
+      <footer className="w-full flex flex-col items-center justify-center mt-12 mb-2 text-center">
+        <a href="https://github.com/mohtashimnawaz" target="_blank" rel="noopener noreferrer" className="text-[#00ffe7] font-bold underline hover:text-[#ff00cc] transition-all">github.com/mohtashimnawaz</a>
+        <div className="mt-2 text-white/80 text-base">By Mohtashim Nawaz</div>
+      </footer>
     </div>
   );
 }
