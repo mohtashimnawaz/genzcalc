@@ -58,11 +58,20 @@ export default function Home() {
     return num;
   }
 
-  // Replace Gen Z numbers in expression with their numeric values
+  // Replace Gen Z numbers and word operators in expression with their numeric and symbolic values
   function convertExpression(expr: string): string {
-    return expr.replace(/([\d,.]+)\s*([KMB])/gi, (m, n, u) => {
+    // Replace Gen Z numbers
+    let out = expr.replace(/([\d,.]+)\s*([KMB])/gi, (m, n, u) => {
       return parseGenZNumber(n + u).toString();
     });
+    // Replace word operators with symbols
+    out = out.replace(/\bplus\b/gi, '+')
+             .replace(/\bminus\b/gi, '-')
+             .replace(/\bdivide(d)?\b/gi, '/')
+             .replace(/\bby\b/gi, '/')
+             .replace(/\binto\b/gi, '*')
+             .replace(/\bof\b/gi, '*');
+    return out;
   }
 
   // Handle calculation
