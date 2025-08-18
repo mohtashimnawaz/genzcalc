@@ -64,13 +64,18 @@ export default function Home() {
     let out = expr.replace(/([\d,.]+)\s*([KMB])/gi, (m, n, u) => {
       return parseGenZNumber(n + u).toString();
     });
-    // Replace word operators with symbols
-    out = out.replace(/\bplus\b/gi, '+')
-             .replace(/\bminus\b/gi, '-')
-             .replace(/\bdivide(d)?\b/gi, '/')
-             .replace(/\bby\b/gi, '/')
-             .replace(/\binto\b/gi, '*')
-             .replace(/\bof\b/gi, '*');
+  // Replace word operators with symbols
+  out = out.replace(/\bplus\b/gi, '+')
+       .replace(/\bminus\b/gi, '-')
+       .replace(/\bdivide(d)?\b/gi, '/')
+       .replace(/\bby\b/gi, '/')
+       .replace(/\binto\b/gi, '*')
+       .replace(/\bof\b/gi, '*')
+       .replace(/\bmod(ulo)?\b/gi, '%')
+       .replace(/\bexp(onent)?\b/gi, '**')
+       .replace(/\bpower\b/gi, '**')
+       .replace(/\bsquared\b/gi, '**2')
+       .replace(/\bcubed\b/gi, '**3');
     return out;
   }
 
@@ -111,7 +116,7 @@ export default function Home() {
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}
-            placeholder="Enter Gen Z expression (e.g. 2K + 3K)"
+            placeholder="Enter your vibe here..."
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg shadow-md glass-card"
             autoFocus
           />
